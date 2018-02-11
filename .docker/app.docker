@@ -1,0 +1,4 @@
+FROM php:7-fpm
+
+RUN apt update && apt install -y libmcrypt-dev libpng-dev libxml2-dev mysql-client
+RUN docker-php-ext-install gd mbstring mysqli pdo_mysql
