@@ -19,3 +19,20 @@ A data visualization web project built on Laravel and [insert front end] using d
     4. Drivers with most race wins across the decades
 - Decide on frontend (React?)
 - Setup build tool (webpack potentially?)
+
+### Notes
+SQL script to get most popular circuits:
+```SQL
+SELECT
+	C.name,
+	COUNT(R.circuit_id) AS "races"
+FROM
+	circuits C
+JOIN
+	races R
+	ON
+		R.circuit_id = C.id
+GROUP BY
+	R.circuit_id
+ORDER BY
+	COUNT(R.circuit_id) DESC;```
