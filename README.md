@@ -1,10 +1,10 @@
 # Formula One Data Visualization Project
-A data visualization web project built on Laravel and [insert front end] using data from [Kaggle](https://www.kaggle.com/cjgdev/formula-1-race-data-19502017). I decided to build this application as I wanted to learn ES6 Javascript and thought the dataset would suit a visual application pretty nicely as well as giving me a chance to stretch my design legs.
+A data visualization web project built on Laravel and React using data from [Kaggle](https://www.kaggle.com/cjgdev/formula-1-race-data-19502017). I decided to build this application as I wanted to learn ES6 Javascript and thought the dataset would suit a visual application pretty nicely as well as giving me a chance to stretch my design legs.
 
 ## Stack
 - MySQL Database
 - Laravel Backend
-- [insert front end] Frontend
+- React Frontend
     - With D3.js
 
 ## Tools
@@ -17,7 +17,9 @@ A data visualization web project built on Laravel and [insert front end] using d
     2. Nations that have most succesful drivers
     3. Nations that have most drivers
     4. Drivers with most race wins across the decades
-- Decide on frontend (React?)
+	5. Fastest lap per decade per track
+	6. Top speed from each decade and who
+
 - Setup build tool (webpack potentially?)
 
 ### Notes
@@ -25,7 +27,7 @@ SQL script to get most popular circuits:
 ```SQL
 SELECT
 	C.name,
-	COUNT(R.circuit_id) AS "races"
+	COUNT(R.circuit_id) AS races
 FROM
 	circuits C
 JOIN
@@ -35,4 +37,42 @@ JOIN
 GROUP BY
 	R.circuit_id
 ORDER BY
-	COUNT(R.circuit_id) DESC;```
+	COUNT(R.circuit_id) DESC;
+```
+
+SQL script to get most succesful nations (based on amount of podium finishes):
+```SQL
+SELECT
+	D.nationality,
+	COUNT(RE.id)
+FROM
+	results RE
+JOIN
+	drivers D
+	ON
+		D.id = RE.driver_id
+WHERE
+	position <= 3
+GROUP BY
+	D.nationality
+ORDER BY
+	COUNT(RE.id) DESC
+```
+
+SQL script to get nations by driver count:
+```SQL
+SELECT
+	nationality,
+	COUNT(id) AS count
+FROM
+	drivers
+GROUP BY
+	nationality
+ORDER BY
+	COUNT(id) DESC;
+```
+
+SQL script to get decade from date field
+```SQL
+CONCAT( 10 * FLOOR( year(date) / 10 ), 's')
+```
