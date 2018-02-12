@@ -11,6 +11,15 @@ A data visualization web project built on Laravel and React using data from [Kag
 - Docker
 - VS Code
 
+## Install
+1. Clone this repo
+2. Create DB table
+3. Run `dataset/DB_INSTALL.sql` in database client
+4. Run `npm install`
+5. Run `composer install`
+6. Build Docker `docker-compose build`
+7. Run Docker `docker-compose up -d`
+
 ## To Do
 - Decide on metrics to display and how
     1. Most popular circuits displayed on a map
