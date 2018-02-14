@@ -13,7 +13,7 @@ A data visualization web project built on Laravel and React using data from [Kag
 
 ## Install
 1. Clone this repo
-2. Create DB table
+2. Create DB
 3. Run `dataset/DB_INSTALL.sql` in database client
 4. Run `npm install`
 5. Run `composer install`
