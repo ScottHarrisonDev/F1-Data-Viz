@@ -85,3 +85,24 @@ SQL script to get decade from date field
 ```SQL
 CONCAT( 10 * FLOOR( year(date) / 10 ), 's')
 ```
+
+SQL script attempt to get driver with highest amount of podiums, grouped by decade
+SELECT
+	CONCAT( 10 * FLOOR( year(date) / 10 ), 's') AS decade,
+	COUNT(RE.driver_id) AS podiums
+FROM
+	results RE
+JOIN
+	races R
+	ON
+		R.id = RE.race_id
+JOIN
+	drivers D
+	ON
+		D.id = RE.driver_id
+WHERE
+	RE.position <= 3
+GROUP BY
+	decade
+ORDER BY
+	decade DESC, podiums DESC
