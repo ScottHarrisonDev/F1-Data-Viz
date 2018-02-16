@@ -81,28 +81,35 @@ ORDER BY
 	COUNT(id) DESC;
 ```
 
-SQL script to get decade from date field
+SQL script to get driver with highest amount of podiums, grouped by decade
 ```SQL
-CONCAT( 10 * FLOOR( year(date) / 10 ), 's')
+SELECT z.podiums, 
+       z.decade, 
+       z.first_name 
+FROM   (SELECT Concat(10 * Floor(Year(date) / 10), 's') AS decade, 
+               Count(RE.driver_id)                      AS podiums, 
+               d.first_name                             AS first_name 
+        FROM   results RE 
+               JOIN races R 
+                 ON R.id = RE.race_id 
+               JOIN drivers D 
+                 ON D.id = RE.driver_id 
+        WHERE  RE.position <= 3 
+        GROUP  BY decade, 
+                  D.first_name) z, 
+       (SELECT y.decade       AS decade, 
+               Max(y.podiums) AS podiums 
+        FROM   (SELECT Concat(10 * Floor(Year(date) / 10), 's') AS decade, 
+                       Count(RE.driver_id)                      AS podiums 
+                FROM   results RE, 
+                       races R, 
+                       drivers D 
+                WHERE  R.id = RE.race_id 
+                       AND D.id = RE.driver_id 
+                       AND RE.position <= 3 
+                GROUP  BY decade, 
+                          D.first_name) y 
+        GROUP  BY y.decade) a 
+WHERE  a.decade = z.decade 
+       AND a.podiums = z.podiums 
 ```
-
-SQL script attempt to get driver with highest amount of podiums, grouped by decade
-SELECT
-	CONCAT( 10 * FLOOR( year(date) / 10 ), 's') AS decade,
-	COUNT(RE.driver_id) AS podiums
-FROM
-	results RE
-JOIN
-	races R
-	ON
-		R.id = RE.race_id
-JOIN
-	drivers D
-	ON
-		D.id = RE.driver_id
-WHERE
-	RE.position <= 3
-GROUP BY
-	decade
-ORDER BY
-	decade DESC, podiums DESC
