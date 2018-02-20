@@ -1,18 +1,14 @@
 
 // Body
-$body-bg: #f5f8fa;
+$body-bg: #18204e;
 
 // Typography
 $font-family-sans-serif: "Raleway", sans-serif;
-$font-size-base: 0.9rem;
+$font-size-base: 1rem;
 $line-height-base: 1.6;
-$text-color: #636b6f;
+$text-color: #c7d8df;
+$link-color: #ec701d;
 
-// Navbar
-$navbar-default-bg: #fff;
-
-// Buttons
-$btn-default-color: $text-color;
-
-// Panels
-$panel-default-heading-bg: #fff;
+// Layout
+$max-text-width:800px;
+$max-display-width:1000px;
