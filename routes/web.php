@@ -11,6 +11,9 @@
 |
 */
 
+Route::get('api/circuits/mostPopular', function (App\Circuit $circuit) {
+    return $circuit->mostPopular();
+});
 Route::get('/', function () {
     return view('index');
 });
