@@ -20,12 +20,14 @@
             </p>
         </div>
         <div class="display-container">
-            This is where I will put my data + explanation
+            <h2>Most Popular Circuits</h2>
+            <pre id="most-popular" style="white-space:normal;"></pre>
         </div>
         <div class="container">
             <footer>
                 Built by <a href="http://scottharrisondesign.co.uk">Scott Harrison</a> | View on <a href="https://github.com/ScottHarrisonDev/F1-Data-Viz">Github</a>
             </footer>
         </div>
+        <script src="{{ mix('/js/app.js') }}"></script>
     </body>
 </html>
