@@ -20,16 +20,23 @@ A data visualization web project built on Laravel and React using data from [Kag
 6. Build Docker `docker-compose build`
 7. Run Docker `docker-compose up -d`
 
-## To Do
-- Decide on metrics to display and how
-    1. Most popular circuits displayed on a map
+## Done
+- Decide on metrics to display
+    1. Most popular circuits displayed on a map?
     2. Nations that have most succesful drivers
     3. Nations that have most drivers
     4. Drivers with most race wins across the decades
 	5. Fastest lap per decade per track
 	6. Top speed from each decade and who
 
-- Setup build tool (webpack potentially?)
+- Setup build tool (webpack with Laravel Mix)
+
+## To Do
+- Get all API calls finished
+
+- Get all data displayed in page as basic chart just to help visualise the data
+
+- Use basic charts to help figure out how to best display the data visually
 
 ### Notes
 SQL script to get most popular circuits:
