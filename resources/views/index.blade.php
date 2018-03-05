@@ -22,14 +22,14 @@
         <div class="display-container">
             <h2>Most Popular Circuits</h2>
             <pre id="most-popular" style="white-space:normal;"></pre>
-            <div id="most-popular-display"></div>
+            <canvas id="most-popular-display"></div>
         </div>
         <div class="container">
             <footer>
                 Built by <a href="http://scottharrisondesign.co.uk">Scott Harrison</a> | View on <a href="https://github.com/ScottHarrisonDev/F1-Data-Viz">Github</a>
             </footer>
         </div>
-        <script src="https://cdn.plot.ly/plotly-1.2.0.min.js"></script>
+        <script src="{{ mix('/js/libs/Chart.min.js') }}"></script>
         <script src="{{ mix('/js/app.js') }}"></script>
     </body>
 </html>

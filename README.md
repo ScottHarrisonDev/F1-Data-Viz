@@ -38,6 +38,8 @@ A data visualization web project built on Laravel and React using data from [Kag
 
 - Use basic charts to help figure out how to best display the data visually
 
+- Update JS code that uses XMLHTTPRequest to use Fetch or at least a promise
+
 ### Notes
 SQL script to get most popular circuits:
 ```SQL

@@ -3,14 +3,31 @@ xmlHttp.open("GET", '/api/circuits/mostPopular', false);
 xmlHttp.send(null);
 const mostpopularcircuitsdata = JSON.parse(xmlHttp.responseText);
 const mostpopularcircuitsdataTransformed = {
-    x: [],
-    y: []
+    circuits: [],
+    data: []
 };
-for (let i = 0; i < mostpopularcircuitsdata.length; i++) {
-    mostpopularcircuitsdataTransformed.x.push(mostpopularcircuitsdata[i].name);
-    mostpopularcircuitsdataTransformed.y.push(mostpopularcircuitsdata[i].races);
+for (let i = 0; i <= 10; i++) {
+    mostpopularcircuitsdataTransformed.circuits.push(mostpopularcircuitsdata[i].name);
+    mostpopularcircuitsdataTransformed.data.push(mostpopularcircuitsdata[i].races);
 }
-console.log(mostpopularcircuitsdataTransformed);
-Plotly.plot('most-popular-display', [mostpopularcircuitsdataTransformed], {
-    margin: { t: 0 }
+const ctx = document.getElementById('most-popular-display');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: mostpopularcircuitsdataTransformed.circuits,
+        datasets: [{
+            label: '# of Races',
+            data: mostpopularcircuitsdataTransformed.data,
+            backgroundColor: 'rgba(255,255,255,0.6)',
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
 });
