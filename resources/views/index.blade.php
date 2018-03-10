@@ -21,8 +21,11 @@
         </div>
         <div class="display-container">
             <h2>Most Popular Circuits</h2>
-            <pre id="most-popular" style="white-space:normal;"></pre>
             <canvas id="most-popular-display"></div>
+        </div>
+        <div class="display-container">
+            <h2>Most Successful Nations <small><em>Based on driver podiums</em></small></h2>
+            <canvas id="most-successful-display"></div>
         </div>
         <div class="container">
             <footer>
