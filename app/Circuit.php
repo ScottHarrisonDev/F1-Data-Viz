@@ -7,10 +7,11 @@ use DB;
 
 class Circuit extends Model
 {
-    public function mostPopular()
+    public static function mostPopular()
     {
         return json_encode(DB::select('
             SELECT
+                C.ref,
                 C.name,
                 COUNT(R.circuit_id) AS races
             FROM
@@ -23,6 +24,8 @@ class Circuit extends Model
                 R.circuit_id
             ORDER BY
                 COUNT(R.circuit_id) DESC
+            LIMIT
+                10
         '));
     }
 }

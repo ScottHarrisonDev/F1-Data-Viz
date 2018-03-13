@@ -13,6 +13,15 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::get('/circuits/mostPopular', function (App\Circuit $circuit) {
+    return $circuit->mostPopular();
+});
+Route::get('/nations/mostSuccessful', function (App\Nation $nation) {
+    return $nation->mostSuccessful();
+});
+Route::get('/nations/mostPopular', function (App\Nation $nation) {
+    return $nation->mostPopular();
+});
+Route::get('/drivers/mostSuccessfulByDecade', function (App\Driver $driver) {
+    return $driver->mostSuccessfulByDecade();
 });

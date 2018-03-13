@@ -19,20 +19,21 @@
                 from 1950 to 2017.
             </p>
         </div>
+
         <div class="display-container">
             <h2>Most Popular Circuits</h2>
-            <canvas id="most-popular-display"></div>
+            <ul>
+                @foreach ($components['circuits']['mostPopular'] as $circuit)
+                    <li><img src="/img/white/{{ $circuit->ref }}.png"> {{ $circuit->name }} - {{ $circuit->races }}</li>
+                @endforeach
+            </ul>
         </div>
-        <div class="display-container">
-            <h2>Most Successful Nations <small><em>Based on driver podiums</em></small></h2>
-            <canvas id="most-successful-display"></div>
-        </div>
+
         <div class="container">
             <footer>
                 Built by <a href="http://scottharrisondesign.co.uk">Scott Harrison</a> | View on <a href="https://github.com/ScottHarrisonDev/F1-Data-Viz">Github</a>
             </footer>
         </div>
-        <script src="{{ mix('/js/libs/Chart.min.js') }}"></script>
         <script src="{{ mix('/js/app.js') }}"></script>
     </body>
 </html>

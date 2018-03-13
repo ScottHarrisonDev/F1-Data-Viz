@@ -32,3 +32,16 @@ div.display-container {
     max-width:$max-display-width;
     margin:0 auto;
 }
+
+ul {
+    padding:0;
+    li {
+    list-style:none;
+    max-height:50px;
+    padding:10px;
+    background-color:rgba(32, 32, 99, 0.8);
+        img {
+            max-height:40px;
+        }
+    }
+}

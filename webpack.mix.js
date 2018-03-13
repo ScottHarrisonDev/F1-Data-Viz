@@ -11,7 +11,6 @@ const { exec } = require('child_process');
  |
  */
 mix.babel(['resources/assets/js/app.js'], path.join(__dirname, "public/js/app.js"))
-    .js('node_modules/chart.js/dist/Chart.min.js', 'public/js/libs/Chart.min.js')
     .sass('resources/assets/sass/app.scss', 'public/css')
     .version();
 exec('docker kill $(docker ps -q)');
