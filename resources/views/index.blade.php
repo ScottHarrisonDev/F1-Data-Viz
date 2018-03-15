@@ -21,12 +21,17 @@
         </div>
 
         <div class="display-container">
-            <h2>Most Popular Circuits</h2>
-            <ul>
-                @foreach ($components['circuits']['mostPopular'] as $circuit)
-                    <li><img src="/img/white/{{ $circuit->ref }}.png"> {{ $circuit->name }} - {{ $circuit->races }}</li>
-                @endforeach
-            </ul>
+            <div class="list-wrapper">
+                <h2>Most Popular Circuits</h2>
+                <ul>
+                    @foreach ($components['circuits']['mostPopular'] as $circuit)
+                        <li data-img="/img/white/{{ $circuit->ref }}.png"><img src="/img/white/{{ $circuit->ref }}.png"> {{ $circuit->name }} - {{ $circuit->races }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            <div class="highlight-wrapper">
+                <img src="/img/white/monza.png">
+            </div>
         </div>
 
         <div class="container">
@@ -34,6 +39,7 @@
                 Built by <a href="http://scottharrisondesign.co.uk">Scott Harrison</a> | View on <a href="https://github.com/ScottHarrisonDev/F1-Data-Viz">Github</a>
             </footer>
         </div>
+        <script src="/js/libs/jquery.min.js"></script>
         <script src="{{ mix('/js/app.js') }}"></script>
     </body>
 </html>

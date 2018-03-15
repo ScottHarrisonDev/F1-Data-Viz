@@ -31,17 +31,57 @@ div.container {
 div.display-container {
     max-width:$max-display-width;
     margin:0 auto;
+    display: grid;
+    grid-template-columns: 50% 50%;	
 }
 
 ul {
     padding:0;
     li {
-    list-style:none;
-    max-height:50px;
-    padding:10px;
-    background-color:rgba(32, 32, 99, 0.8);
+        list-style:none;
+        max-height:50px;
+        padding:10px;
+        &:not(:first-child) {
+            border-top: solid 1px #fff;
+        }
         img {
             max-height:40px;
         }
+    }
+}
+
+
+
+.highlight-wrapper {
+    position: relative;
+}
+.highlight-wrapper img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    max-width: 100%;
+    text-shadow: 10px 10px 3px rgba(0,0,0,0.15);
+    animation-name: float;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes float {
+    from {
+        transform: translate(-50%, -50%) rotateY(12deg) rotateX(12deg);
+    }
+    25% {
+        transform: translate(-50%, -50%) rotateY(-12deg) rotateX(12deg);
+    }
+    50% {
+        transform: translate(-50%, -50%) rotateY(-12deg) rotateX(-12deg);
+    }
+    75% {
+        transform: translate(-50%, -50%) rotateY(12deg) rotateX(-12deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotateY(12deg) rotateX(12deg);
     }
 }
