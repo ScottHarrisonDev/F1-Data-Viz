@@ -13,6 +13,7 @@ class Circuit extends Model
             SELECT
                 C.ref,
                 C.name,
+                C.country,
                 COUNT(R.circuit_id) AS races
             FROM
                 circuits C

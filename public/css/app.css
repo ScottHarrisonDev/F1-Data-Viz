@@ -26,7 +26,113 @@ div.container {
 }
 
 div.display-container {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+ul {
+  padding: 0;
+}
+
+ul li {
+  list-style: none;
+  padding: 10px;
+}
+
+ul li:not(:first-child) {
+  border-top: solid 1px #fff;
+}
+
+ul li .flag-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 10%;
+}
+
+ul li .flag {
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.highlight-wrapper {
+  position: relative;
+}
+
+.highlight-wrapper img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  max-width: 100%;
+  text-shadow: 10px 10px 3px rgba(0, 0, 0, 0.15);
+  -webkit-animation-name: float;
+          animation-name: float;
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+}
+
+@-webkit-keyframes float {
+  from {
+    -webkit-transform: translate(-50%, -50%) rotateY(12deg) rotateX(12deg);
+            transform: translate(-50%, -50%) rotateY(12deg) rotateX(12deg);
+  }
+
+  25% {
+    -webkit-transform: translate(-50%, -50%) rotateY(-12deg) rotateX(12deg);
+            transform: translate(-50%, -50%) rotateY(-12deg) rotateX(12deg);
+  }
+
+  50% {
+    -webkit-transform: translate(-50%, -50%) rotateY(-12deg) rotateX(-12deg);
+            transform: translate(-50%, -50%) rotateY(-12deg) rotateX(-12deg);
+  }
+
+  75% {
+    -webkit-transform: translate(-50%, -50%) rotateY(12deg) rotateX(-12deg);
+            transform: translate(-50%, -50%) rotateY(12deg) rotateX(-12deg);
+  }
+
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotateY(12deg) rotateX(12deg);
+            transform: translate(-50%, -50%) rotateY(12deg) rotateX(12deg);
+  }
+}
+
+@keyframes float {
+  from {
+    -webkit-transform: translate(-50%, -50%) rotateY(12deg) rotateX(12deg);
+            transform: translate(-50%, -50%) rotateY(12deg) rotateX(12deg);
+  }
+
+  25% {
+    -webkit-transform: translate(-50%, -50%) rotateY(-12deg) rotateX(12deg);
+            transform: translate(-50%, -50%) rotateY(-12deg) rotateX(12deg);
+  }
+
+  50% {
+    -webkit-transform: translate(-50%, -50%) rotateY(-12deg) rotateX(-12deg);
+            transform: translate(-50%, -50%) rotateY(-12deg) rotateX(-12deg);
+  }
+
+  75% {
+    -webkit-transform: translate(-50%, -50%) rotateY(12deg) rotateX(-12deg);
+            transform: translate(-50%, -50%) rotateY(12deg) rotateX(-12deg);
+  }
+
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotateY(12deg) rotateX(12deg);
+            transform: translate(-50%, -50%) rotateY(12deg) rotateX(12deg);
+  }
 }
 

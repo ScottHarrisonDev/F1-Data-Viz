@@ -25,7 +25,7 @@
                 <h2>Most Popular Circuits</h2>
                 <ul>
                     @foreach ($components['circuits']['mostPopular'] as $circuit)
-                        <li data-img="/img/white/{{ $circuit->ref }}.png"><img src="/img/white/{{ $circuit->ref }}.png"> {{ $circuit->name }} - {{ $circuit->races }}</li>
+                        <li data-img="/img/white/{{ $circuit->ref }}.png"><div class="flag-wrapper"><img class="flag" src="/img/flags/{{ strtolower($circuit->country) }}.svg"></div> <span>{{ $circuit->name }} - {{ $circuit->races }}</li>
                     @endforeach
                 </ul>
             </div>
