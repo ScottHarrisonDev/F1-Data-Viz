@@ -41,6 +41,11 @@ ul li {
   padding: 10px;
   display: grid;
   grid-template-columns: 12% 88%;
+  position: relative;
+}
+
+ul li:hover .hovering {
+  width: 100%;
 }
 
 ul li:not(:first-child) {
@@ -58,6 +63,18 @@ ul li .flag {
   height: 40px;
   -webkit-transform: rotate(-44grad) translateY(-22px) translateX(-1px);
           transform: rotate(-44grad) translateY(-22px) translateX(-1px);
+}
+
+.hovering {
+  -webkit-transition: all 350ms;
+  transition: all 350ms;
+  position: absolute;
+  width: 0;
+  height: 1px;
+  background-color: red;
+  content: "";
+  z-index: 1;
+  bottom: -1px;
 }
 
 .highlight-wrapper {
@@ -80,6 +97,18 @@ ul li .flag {
           animation-iteration-count: infinite;
   -webkit-animation-timing-function: ease-in-out;
           animation-timing-function: ease-in-out;
+}
+
+.highlight-details {
+  position: absolute;
+  background-color: rgba(10, 10, 10, 0.4);
+  padding: 15px 35px;
+  bottom: 15px;
+  right: 15px;
+}
+
+.highlight-details.hidden {
+  display: none;
 }
 
 @-webkit-keyframes float {

@@ -13,11 +13,12 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public function index() {
-
         $components = [];
 
         $components['circuits']['mostPopular'] = json_decode(Circuit::mostPopular());
-
+        foreach($components['circuits']['mostPopular'] as $circuit) {
+            $circuit->details = Circuit::getDetails($circuit->id)->toArray();
+        }
         return view('index', ['components' => $components]);
     }
 }

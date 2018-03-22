@@ -25,11 +25,25 @@
                 <h2>Most Popular Circuits</h2>
                 <ul>
                     @foreach ($components['circuits']['mostPopular'] as $circuit)
-                        <li data-img="/img/white/{{ $circuit->ref }}.png"><div class="flag-wrapper"><img class="flag" src="/img/flags/{{ strtolower($circuit->country) }}.svg"></div> <span>{{ $circuit->name }} - {{ $circuit->races }}</li>
+                        <li data-img="/img/white/{{ $circuit->ref }}.png" data-ref="{{ $circuit->ref }}">
+                            <div class="hovering"></div>
+                            <div class="flag-wrapper">
+                                <img class="flag" src="/img/flags/{{ strtolower($circuit->country) }}.svg">
+                            </div> <span>{{ $circuit->name }} - {{ $circuit->races }}
+                        </li>
                     @endforeach
                 </ul>
             </div>
             <div class="highlight-wrapper">
+                @foreach ($components['circuits']['mostPopular'] as $circuit)
+                    @if ( ! empty($circuit->details))
+                        <div class="highlight-details hidden" data-ref="{{ $circuit->ref }}">
+                            @foreach ($circuit->details as $detail)
+                                <div><strong>{{ ucfirst($detail->key) }}:</strong> {{ $detail->value }}</div>
+                            @endforeach
+                        </div>
+                    @endif
+                @endforeach
                 <img src="/img/white/monza.png">
             </div>
         </div>

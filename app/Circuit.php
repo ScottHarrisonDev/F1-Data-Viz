@@ -11,6 +11,7 @@ class Circuit extends Model
     {
         return json_encode(DB::select('
             SELECT
+                C.id,
                 C.ref,
                 C.name,
                 C.country,
@@ -28,5 +29,10 @@ class Circuit extends Model
             LIMIT
                 10
         '));
+    }
+
+    public static function getDetails($id)
+    {
+        return DB::table('circuit_details')->where('circuit_id', $id)->get();
     }
 }
