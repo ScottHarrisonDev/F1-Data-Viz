@@ -39,6 +39,8 @@ ul {
 ul li {
   list-style: none;
   padding: 10px;
+  display: grid;
+  grid-template-columns: 12% 88%;
 }
 
 ul li:not(:first-child) {
@@ -46,18 +48,16 @@ ul li:not(:first-child) {
 }
 
 ul li .flag-wrapper {
-  position: relative;
+  overflow: hidden;
+  height: 20px;
   display: inline-block;
-  width: 10%;
+  border-radius: 2px 0 0 2px;
 }
 
 ul li .flag {
-  height: 20px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  height: 40px;
+  -webkit-transform: rotate(-44grad) translateY(-22px) translateX(-1px);
+          transform: rotate(-44grad) translateY(-22px) translateX(-1px);
 }
 
 .highlight-wrapper {
