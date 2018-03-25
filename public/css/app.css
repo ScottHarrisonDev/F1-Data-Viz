@@ -1,3 +1,13 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #18204e;
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #c7d8df;
+}
+
 h1 {
   font-weight: 100;
 }
@@ -11,77 +21,74 @@ a:hover {
   border-bottom: 1px solid #ec701d;
 }
 
-body {
-  min-height: 100vh;
-  background-color: #18204e;
-  font-family: "Raleway", sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #c7d8df;
-}
-
-div.container {
+.c-container--text {
   max-width: 800px;
   margin: 0 auto;
 }
 
-div.display-container {
+.c-container--visual-2 {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 50% 50%;
 }
 
-ul {
+.d-mpc--data ul {
   padding: 0;
 }
 
-ul li {
+.d-mpc--data ul li {
   list-style: none;
   padding: 10px;
   display: grid;
-  grid-template-columns: 12% 88%;
+  grid-template-columns: 12% 78% 10%;
   position: relative;
 }
 
-ul li:hover .hovering {
+.d-mpc--data ul li:first-child {
+  font-weight: bold;
+  border-bottom: 1px solid #fff;
+}
+
+.d-mpc--data ul li span {
+  z-index: 2;
+}
+
+.d-mpc--data ul li:hover .d-mpc--highlight {
   width: 100%;
 }
 
-ul li:not(:first-child) {
-  border-top: solid 1px #fff;
-}
-
-ul li .flag-wrapper {
+.d-mpc--data ul li .d-mpc--flag {
   overflow: hidden;
   height: 20px;
   display: inline-block;
   border-radius: 2px 0 0 2px;
 }
 
-ul li .flag {
+.d-mpc--data ul li .d-mpc--flag img {
   height: 40px;
   -webkit-transform: rotate(-44grad) translateY(-22px) translateX(-1px);
           transform: rotate(-44grad) translateY(-22px) translateX(-1px);
 }
 
-.hovering {
-  -webkit-transition: all 350ms;
-  transition: all 350ms;
+.d-mpc--highlight {
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
   position: absolute;
   width: 0;
-  height: 1px;
-  background-color: red;
+  height: 100%;
+  opacity: 0.2;
+  background-color: #9e2525;
   content: "";
-  z-index: 1;
   bottom: -1px;
 }
 
-.highlight-wrapper {
+.d-mpc--viz {
   position: relative;
+  padding: 25px;
 }
 
-.highlight-wrapper img {
+.d-mpc--viz img {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -99,15 +106,15 @@ ul li .flag {
           animation-timing-function: ease-in-out;
 }
 
-.highlight-details {
+.d-mpc--viz .d-mpc--details {
   position: absolute;
   background-color: rgba(10, 10, 10, 0.4);
   padding: 15px 35px;
-  bottom: 15px;
-  right: 15px;
+  bottom: 0;
+  right: 0;
 }
 
-.highlight-details.hidden {
+.d-mpc--viz .d-mpc--details.hidden {
   display: none;
 }
 

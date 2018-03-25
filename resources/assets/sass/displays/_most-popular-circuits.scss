@@ -1,0 +1,68 @@
+.d-mpc--data {
+    ul {
+        padding: 0;
+        li {
+            list-style: none;
+            padding: 10px;
+            display: grid;
+            grid-template-columns: 12% 78% 10%;
+            position: relative;
+            &:first-child {
+                font-weight: bold;
+                border-bottom: 1px solid #fff;
+            }
+            span {
+                z-index: 2;
+            }
+            &:hover .d-mpc--highlight {
+                width: 100%;
+            }
+            .d-mpc--flag {
+                overflow: hidden;
+                height: 20px;
+                display: inline-block;
+                border-radius: 2px 0 0 2px;
+                img {
+                    height: 40px;
+                    transform: rotate(-44grad) translateY(-22px) translateX(-1px);
+                }
+            }
+        }
+    }
+}
+.d-mpc--highlight {
+    transition: all 500ms;
+    position: absolute;
+    width: 0;
+    height: 100%;
+    opacity: 0.2;
+    background-color: #9e2525;
+    content: "";
+    bottom: -1px;
+}
+.d-mpc--viz {
+    position: relative;
+    padding: 25px;
+    img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        max-width: 100%;
+        text-shadow: 10px 10px 3px rgba(0,0,0,0.15);
+        animation-name: float;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+    }
+    .d-mpc--details {
+        position: absolute;
+        background-color: rgba(10,10,10,0.4);
+        padding: 15px 35px;
+        bottom: 0;
+        right: 0;
+        &.hidden {
+            display:none;
+        }
+    }
+}

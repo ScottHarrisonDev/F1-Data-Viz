@@ -1,0 +1,10 @@
+.c-container--text {
+    max-width:$max-text-width;
+    margin:0 auto;
+}
+.c-container--visual-2 {
+    max-width:$max-display-width;
+    margin:0 auto;
+    display: grid;
+    grid-template-columns: 50% 50%;	
+}

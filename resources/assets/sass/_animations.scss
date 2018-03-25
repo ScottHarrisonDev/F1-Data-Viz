@@ -1,0 +1,17 @@
+@keyframes float {
+    from {
+        transform: translate(-50%, -50%) rotateY(12deg) rotateX(12deg);
+    }
+    25% {
+        transform: translate(-50%, -50%) rotateY(-12deg) rotateX(12deg);
+    }
+    50% {
+        transform: translate(-50%, -50%) rotateY(-12deg) rotateX(-12deg);
+    }
+    75% {
+        transform: translate(-50%, -50%) rotateY(12deg) rotateX(-12deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotateY(12deg) rotateX(12deg);
+    }
+}

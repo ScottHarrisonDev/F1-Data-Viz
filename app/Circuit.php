@@ -25,7 +25,7 @@ class Circuit extends Model
             GROUP BY
                 R.circuit_id
             ORDER BY
-                COUNT(R.circuit_id) DESC
+                COUNT(R.circuit_id) DESC, C.name
             LIMIT
                 10
         '));
