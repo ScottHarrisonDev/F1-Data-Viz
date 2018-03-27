@@ -123,6 +123,59 @@ a:hover {
   display: none;
 }
 
+.nt-wrapper:hover .nt-wrap {
+  height: 100px;
+}
+
+.nt-wrap {
+  width: 150px;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  -webkit-transition: all 350ms;
+  transition: all 350ms;
+  height: 70px;
+}
+
+.nt-wrap:hover {
+  width: 250px;
+}
+
+.nt-wrap:hover .nt-img {
+  -webkit-transform: rotate(0) scale(1) translate(-50%, -50%);
+          transform: rotate(0) scale(1) translate(-50%, -50%);
+}
+
+.nt {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: red;
+  z-index: 2;
+}
+
+.pd {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: green;
+  z-index: 2;
+}
+
+.nt-img {
+  -webkit-transition: all 350ms;
+  transition: all 350ms;
+  width: 100%;
+  top: 50%;
+  z-index: 1;
+  left: 50%;
+  position: absolute;
+  -webkit-transform-origin: 50% 20%;
+          transform-origin: 50% 20%;
+  -webkit-transform: rotate(50grad) scale(2);
+          transform: rotate(50grad) scale(2);
+}
+
 @-webkit-keyframes float {
   from {
     -webkit-transform: translate(-50%, -50%) rotateY(12deg) rotateX(12deg);

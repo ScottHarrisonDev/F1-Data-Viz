@@ -26,7 +26,7 @@ class Nation extends Model
             ORDER BY
                 COUNT(RE.id) DESC
             LIMIT
-                5
+                10
         '));
     }
 

@@ -1,0 +1,41 @@
+.nt-wrapper:hover .nt-wrap {
+    height: 100px;
+}
+.nt-wrap {
+    width: 150px;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    transition: all 350ms;
+    height: 70px;
+    &:hover {
+        width: 250px;
+        .nt-img {
+            transform: rotate(0) scale(1) translate(-50%, -50%);
+        }
+    }
+}
+.nt {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: red;
+    z-index: 2;
+}
+.pd {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: green;
+    z-index: 2;
+}
+.nt-img {
+    transition: all 350ms;
+    width: 100%;
+    top: 50%;
+    z-index: 1;
+    left: 50%;
+    position: absolute;
+    transform-origin: 50% 20%;
+    transform: rotate(50grad) scale(2);
+}

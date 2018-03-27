@@ -5,11 +5,13 @@
         boasting over 200 more podiums than Germany who came in second best, 
         followed by France.
     </p>
-    @foreach ($components['nations']['mostSuccessful'] as $nation)
-        <div class="nt-wrap">
-            <span class="nt">{{ $nation->nationality }}</span>
-            <span class="pd">{{ $nation->podiums }}</span>
-            <img src="/img/flags/nationality/{{ strtolower($nation->nationality) }}.svg" class="nt-img">
-        </div>
-    @endforeach
+    <div class="nt-wrapper">
+        @foreach ($components['nations']['mostSuccessful'] as $nation)
+            <div class="nt-wrap">
+                <span class="nt">{{ $nation->nationality }}</span>
+                <span class="pd">{{ $nation->podiums }}</span>
+                <img src="/img/flags/nationality/{{ strtolower($nation->nationality) }}.svg" class="nt-img">
+            </div>
+        @endforeach
+    </div>
 </div>
