@@ -9,7 +9,7 @@
         <ul>
             <li><span>Circuit</span><span></span><span>Races</span></li>
             @foreach ($components['circuits']['mostPopular'] as $circuit)
-                <li data-img="/img/white/{{ $circuit->ref }}.png" data-ref="{{ $circuit->ref }}">
+                <li data-img="/img/black/{{ $circuit->ref }}.png" data-ref="{{ $circuit->ref }}">
                     <div class="d-mpc--highlight"></div>
                     <div class="d-mpc--flag">
                         <img src="/img/flags/{{ strtolower($circuit->country) }}.svg">

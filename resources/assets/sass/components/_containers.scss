@@ -1,3 +1,7 @@
+.c-container--light {
+    background-color: $body-bg-light;
+    color: $text-color-light;
+}
 .c-container--text {
     max-width: $max-text-width;
     margin: 0 auto;

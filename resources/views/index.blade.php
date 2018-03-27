@@ -23,8 +23,14 @@
         </div>
 
 
-        @include('displays.most-popular-circuits')
-        @include('displays.most-successful-nations')
+        <div class="c-container--light">
+            <div class="c-divider c-divider--left c-divider--dark"></div>
+            @include('displays.most-popular-circuits')
+        </div>
+        <div class="c-container--full">
+            <div class="c-divider c-divider--right c-divider--light"></div>
+            @include('displays.most-successful-nations')
+        </div>
 
 
         {{-- <div class="container">
