@@ -7,6 +7,7 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use App\Circuit;
+use App\Nation;
 
 class Controller extends BaseController
 {
@@ -19,6 +20,9 @@ class Controller extends BaseController
         foreach($components['circuits']['mostPopular'] as $circuit) {
             $circuit->details = Circuit::getDetails($circuit->id)->toArray();
         }
+
+        $components['nations']['mostSuccessful'] = json_decode(Nation::mostSuccessful());
+
         return view('index', ['components' => $components]);
     }
 }

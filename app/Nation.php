@@ -7,12 +7,12 @@ use DB;
 
 class Nation extends Model
 {
-    public function mostSuccessful()
+    public static function mostSuccessful()
     {
         return json_encode(DB::select('
             SELECT
                 D.nationality,
-                COUNT(RE.id)
+                COUNT(RE.id) AS podiums
             FROM
                 results RE
             JOIN
@@ -25,6 +25,8 @@ class Nation extends Model
                 D.nationality
             ORDER BY
                 COUNT(RE.id) DESC
+            LIMIT
+                5
         '));
     }
 
