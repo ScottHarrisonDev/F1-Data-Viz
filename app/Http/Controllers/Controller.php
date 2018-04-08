@@ -16,12 +16,12 @@ class Controller extends BaseController
     public function index() {
         $components = [];
 
-        $components['circuits']['mostPopular'] = json_decode(Circuit::mostPopular());
-        foreach($components['circuits']['mostPopular'] as $circuit) {
-            $circuit->details = Circuit::getDetails($circuit->id)->toArray();
-        }
+        // $components['circuits']['mostPopular'] = json_decode(Circuit::mostPopular());
+        // foreach($components['circuits']['mostPopular'] as $circuit) {
+        //     $circuit->details = Circuit::getDetails($circuit->id)->toArray();
+        // }
 
-        $components['nations']['mostSuccessful'] = json_decode(Nation::mostSuccessful());
+        // $components['nations']['mostSuccessful'] = json_decode(Nation::mostSuccessful());
 
         return view('index', ['components' => $components]);
     }

@@ -32,7 +32,6 @@ a:hover {
 }
 
 .c-container--visual-1 {
-  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -66,6 +65,57 @@ a:hover {
 .c-divider--right.c-divider--light {
   background: -webkit-gradient(linear, right top, left bottom, color-stop(49.5%, #ccc), color-stop(50%, transparent));
   background: linear-gradient(to left bottom, #ccc 49.5%, transparent 50%);
+}
+
+.c-landing {
+  position: relative;
+  height: 100vh;
+}
+
+.c-landing .c-landing--copy {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.c-nav {
+  width: 250px;
+  background-color: #ccc;
+  color: #18204e;
+  position: relative;
+  left: 5vw;
+  border-left: 10px solid #767da0;
+  border-right: 10px solid #767da0;
+}
+
+.c-nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+.c-nav li {
+  height: 100vh;
+  position: relative;
+}
+
+.c-nav h2 {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.c-scroll {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 .d-mpc--data ul {

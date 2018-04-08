@@ -1,0 +1,24 @@
+.c-nav {
+    width: 250px;
+    background-color: $body-bg-light;
+    color: $body-bg;
+    position: relative;
+    left: 5vw;
+    border-left: 10px solid #767da0;
+    border-right: 10px solid #767da0;
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+    li {
+        height: 100vh;
+        position: relative;
+    }
+    h2 {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+}
