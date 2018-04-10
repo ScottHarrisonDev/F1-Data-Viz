@@ -1,5 +1,5 @@
 @keyframes float {
-    from {
+    0% {
         transform: translate(-50%, -50%) rotateY(12deg) rotateX(12deg);
     }
     25% {
@@ -13,5 +13,16 @@
     }
     100% {
         transform: translate(-50%, -50%) rotateY(12deg) rotateX(12deg);
+    }
+}
+@keyframes bounce {
+    from {
+        transform: translateY(-10px) translateX(-50%);
+    }
+    50% {
+        transform: translateY(10px) translateX(-50%);
+    }
+    to {
+        transform: translateY(-10px) translateX(-50%);
     }
 }

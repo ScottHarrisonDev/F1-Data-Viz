@@ -2,5 +2,7 @@
     position: absolute;
     bottom: 100px;
     left: 50%;
-    transform: translateX(-50%);
+    animation-name: bounce;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
 }

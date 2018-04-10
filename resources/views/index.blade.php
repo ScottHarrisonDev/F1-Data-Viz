@@ -13,9 +13,9 @@
 
         <div class="c-landing">
             <div class="c-landing--copy">
-                <h1>A History Of Formula 1 In Data</h1>
+                <h1>70 years of Formula 1 In Data</h1>
                 <p>
-                    Formula 1 has come a long way over the last 60 years, in this project I have set out to analyse how the sport
+                    Formula 1 has come a long way over the last 70 years, in this project I have set out to analyse how the sport
                     has changed over the decades and provide some insight into why the sport has been so successful. This analysis
                     has been built around data from <a href="https://kaggle.com">Kaggle.com</a> which includes Formula 1 data 
                     from 1950 to 2017.
